@@ -80,8 +80,21 @@ public class Main {
             int dayoftheweek;
             int modYear = year % 100;
             int zeroYear = year / 100;
-            dayoftheweek = day + 13 * (month + 1) / 5 + modYear + modYear / 4 + zeroYear / 4 + 5 * zeroYear;
-            dayoftheweek = dayoftheweek % 7;
+            switch (month){
+                case 1: month=13;
+                break;
+                case 2: month=14;
+                break;
+
+            }
+            if (month>=13){
+                dayoftheweek = day + 13 * (month + 1) / 5 + modYear + modYear / 4 + 5 + 6 * zeroYear;
+                dayoftheweek = dayoftheweek % 7;
+            }
+            else {
+                dayoftheweek = day + 13 * (month + 1) / 5 + modYear + modYear / 4 + zeroYear / 4 + 5 * zeroYear;
+                dayoftheweek = dayoftheweek % 7;
+            }
 
             switch (dayoftheweek) {
 
