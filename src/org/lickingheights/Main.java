@@ -28,6 +28,7 @@ public class Main {
             daysofmonth(month);
             dayoftheweek(day, month, year);
 
+
         }
     }
 
@@ -56,26 +57,26 @@ public class Main {
                     monthString = "There are 31 days in July";
                     break;
                 case 8:
-                    monthString = "There are 30 days in August";
+                    monthString = "There are 31 days in August";
                     break;
                 case 9:
-                    monthString = "There are 31 days in September";
+                    monthString = "There are 30 days in September";
                     break;
                 case 10:
-                    monthString = "There are 30 days in October";
+                    monthString = "There are 31 days in October";
                     break;
                 case 11:
-                    monthString = "There are 31 days in November";
+                    monthString = "There are 30 days in November";
                     break;
                 case 12:
-                    monthString = "There are 30 days in December";
+                    monthString = "There are 31 days in December";
                     break;
             }
-            System.out.println(monthString);
+            System.out.println("\n\n\n"+monthString);
             return (monthString);
         }
 
-        public static String dayoftheweek ( int day, int month, int year){
+        public static void dayoftheweek ( int day, int month, int year){
             String daysString = "";
             int dayoftheweek;
             int modYear = year % 100;
@@ -120,9 +121,29 @@ public class Main {
                     daysString = "Friday";
                     break;
             }
-            System.out.println(daysString);
+            System.out.println("You were born on "+daysString+ "!" );
 
-            return (daysString);
+            poemLine (daysString);
 
+        }
+        public static void poemLine(String days){
+            String poem = "";
+        switch (days){
+            case "Monday": poem= "Monday's child is fair of face";
+                    break;
+            case "Tuesday": poem= "Tuesday's child is full of grace";
+            break;
+            case "Wednesday": poem= "Wednesday's child is full of woe";
+            break;
+            case "Thursday":poem= "Thursday's child has far to go.";
+            break;
+            case "Friday": poem= "Friday's child is loving and giving";
+            break;
+            case "Saturday": poem= "Saturday's child works hard for a living";
+            break;
+            case "Sunday": poem= "Sunday's child is fair and wise and good in every way";
+            break;
+        }
+            System.out.println(poem+ "\n\n\n\n");
         }
     }
