@@ -73,4 +73,42 @@ public class Main {
         System.out.println(monthString);
         return (monthString);
     }
+
+    public static String dayoftheweek(int day, int month, int year) {
+        String daysString = "";
+        int dayoftheweek;
+        int modYear = year % 100;
+        int zeroYear = year / 100;
+        dayoftheweek = day + 13 * (month + 1) / 5 + modYear + modYear / 4 + zeroYear / 4 + 5 * zeroYear;
+        dayoftheweek = dayoftheweek % 7;
+
+        switch (dayoftheweek) {
+
+            case 0:
+                daysString = "Saturday";
+                break;
+            case 1:
+                daysString = "Sunday";
+                break;
+            case 2:
+                daysString = "Monday";
+                break;
+            case 3:
+                daysString = "Tuesday";
+                break;
+            case 4:
+                daysString = "Wednesday";
+                break;
+            case 5:
+                daysString = "Thursday";
+                break;
+            case 6:
+                daysString = "Friday";
+                break;
+        }
+        System.out.println(daysString);
+
+        return (daysString);
+
+    }
 }
